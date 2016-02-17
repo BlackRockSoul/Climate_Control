@@ -44,23 +44,23 @@ namespace Climate_Control
             try
             {
                 //MessageBox.Show(stroka);
-                label15.Text = args[0].Substring(args[0].IndexOf(":") + 2);
-                label5.Text = args[1].Substring(args[1].IndexOf(":") + 2);
-                label10.Text = args[4].Substring(8);
-                label12.Text = args[5].Substring(args[5].IndexOf(":") + 2);
-                label7.Text = args[2];
-                label6.Text = args[3];
-                label17.Text = args[6];
-                label20.Text = args[7].Substring(args[7].IndexOf(":") + 2);
-                label21.Text = args[8];
+                HumidityV.Text = args[0].Substring(args[0].IndexOf(":") + 2) + "%";
+                SrTempV.Text = args[1].Substring(args[1].IndexOf(":") + 2) + "°C";
+                AngleV.Text = args[4].Substring(8);
+                ClosedV.Text = args[5].Substring(args[5].IndexOf(":") + 2);
+                HotTempV.Text = args[2] + "°C";
+                WindowTempV.Text = args[3] + "°C";
+                CycleV.Text = args[6];
+                NeedTempV.Text = args[7].Substring(args[7].IndexOf(":") + 2) + "°C";
+                CycleAllV.Text = args[8];
                 stroka = "";
-                if (label12.Text == "true" && label10.Text == "180")
+                if (ClosedV.Text == "true" && AngleV.Text == "180")
                 {
-                    checkBox1.Checked = true;
+                    CloseWindow.Checked = true;
                 }
                 else
                 {
-                    checkBox1.Checked = false;
+                    CloseWindow.Checked = false;
                 }
             }
             catch
@@ -72,8 +72,7 @@ namespace Climate_Control
         {
             if (serialPort1.IsOpen) serialPort1.Close();
         }
-
-
+        
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -94,15 +93,15 @@ namespace Climate_Control
         private void button1_Click(object sender, EventArgs e)
         {
             serialPort1.Close();
-            label15.Text = "null";
-            label5.Text = "null";
-            label10.Text = "null";
-            label12.Text = "null";
-            label7.Text = "null";
-            label6.Text = "null";
-            label17.Text = "null";
-            label20.Text = "null";
-            label21.Text = "null";
+            HumidityV.Text = "null";
+            SrTempV.Text = "null";
+            AngleV.Text = "null";
+            ClosedV.Text = "null";
+            HotTempV.Text = "null";
+            WindowTempV.Text = "null";
+            CycleV.Text = "null";
+            NeedTempV.Text = "null";
+            CycleAllV.Text = "null";
         }
 
         private void button3_Click(object sender, EventArgs e)
