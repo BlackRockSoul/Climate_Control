@@ -48,42 +48,18 @@ namespace Climate_Control
                 CycleComplV.Text = args[12];
                 CycleAllV.Text = args[13];
 
-
                 stroka = "";
-                if (ClosedV.Text == "true")
-                {
-                    CloseWindow.Checked = true;
-                }
-                else
-                {
-                    CloseWindow.Checked = false;
-                }
 
-                if (OpenedV.Text == "true")
-                {
-                    OpenWindow.Checked = true;
-                }
-                else
-                {
-                    OpenWindow.Checked = false;
-                }
+                if (ClosedV.Text == "true") CloseWindow.Checked = true; else CloseWindow.Checked = false;
+                if (OpenedV.Text == "true") OpenWindow.Checked = true; else OpenWindow.Checked = false;
+
             }
-            catch
-            {
-            }
+            catch { }
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            try
-            {
-                if (serialPort1.IsOpen) serialPort1.Close();
-            }
-            catch
-            {
-
-            }
-
+            try { if (serialPort1.IsOpen) serialPort1.Close(); } catch { }
         }
 
 
@@ -99,9 +75,7 @@ namespace Climate_Control
                 serialPort1.WriteTimeout = 500;
             }
             catch
-            {
-                MessageBox.Show("Что-то сломалось...");
-            }
+            { MessageBox.Show("Что-то сломалось..."); }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -133,10 +107,7 @@ namespace Climate_Control
                 serialPort1.WriteLine("+");
                 serialPort1.WriteLine("");
             }
-            catch
-            {
-                MessageBox.Show("Ошибка");
-            }
+            catch { MessageBox.Show("Ошибка"); }
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -146,10 +117,7 @@ namespace Climate_Control
                 serialPort1.WriteLine("-");
                 serialPort1.WriteLine("");
             }
-            catch
-            {
-                MessageBox.Show("Ошибка");
-            }
+            catch { MessageBox.Show("Ошибка"); }
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -159,10 +127,7 @@ namespace Climate_Control
                 serialPort1.WriteLine("/");
                 serialPort1.WriteLine("");
             }
-            catch
-            {
-                MessageBox.Show("Ошибка");
-            }
+            catch { MessageBox.Show("Ошибка"); }
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -172,10 +137,7 @@ namespace Climate_Control
                 serialPort1.WriteLine("*");
                 serialPort1.WriteLine("");
             }
-            catch
-            {
-                MessageBox.Show("Ошибка");
-            }
+            catch { MessageBox.Show("Ошибка"); }
         }
         private void checkBox1_MouseClick(object sender, MouseEventArgs e)
         {
@@ -184,10 +146,7 @@ namespace Climate_Control
                 serialPort1.WriteLine("1");
                 serialPort1.WriteLine("");
             }
-            catch
-            {
-                MessageBox.Show("Ошибка");
-            }
+            catch { MessageBox.Show("Ошибка"); }
         }
 
         private void OpenWindow_MouseClick(object sender, MouseEventArgs e)
@@ -197,10 +156,7 @@ namespace Climate_Control
                 serialPort1.WriteLine("2");
                 serialPort1.WriteLine("");
             }
-            catch
-            {
-                MessageBox.Show("Ошибка");
-            }
+            catch { MessageBox.Show("Ошибка"); }
         }
     }
 }
