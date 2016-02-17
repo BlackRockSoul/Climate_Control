@@ -19,7 +19,10 @@ int timerRead = 40;
 int timer = timerRead - 1;
 int razn = 0;
 bool closed = false;
+bool opened = false;
 static int ServoDelay = 40;
+int complTimes = 0;
+int allTimes = 0;
 
 
 void setup() {
@@ -53,7 +56,7 @@ void loop() {
 
   float deltaT = (t + t22) / 2;
 
-  float deltaTr = int(round(deltaT));
+  float deltaTr = round(deltaT);
 
   float deltaH = (h + h22) / 2;
 
@@ -64,27 +67,32 @@ void loop() {
 
   if (Serial.available() < 4)  {
 
-    if (timer == timerRead && closed != true) {
+    if ((timer >= timerRead) && (closed == false) && (opened == false)) {
 
-      if (deltaTr > SetTemp)
+      allTimes++;
+
+      //Жарко
+      if (deltaTr > SetTemp) {
         razn = int(deltaTr) - int(SetTemp);
-      if (razn > 3) razn = 4;
-      switch (razn) {
-        case int(1): Angle = Angle - AngleCh1; break;
-        case int(2): Angle = Angle - AngleCh2; break;
-        case int(3): Angle = Angle - AngleCh3; break;
-        case int(4): Angle = 0; break;
-
+        if (razn > 3) razn = 4;
+        switch (razn) {
+          case int(1): Angle = Angle - AngleCh1; break;
+          case int(2): Angle = Angle - AngleCh2; break;
+          case int(3): Angle = Angle - AngleCh3; break;
+          case int(4): Angle = 0; break;
+        }
+        if (servo.read() - Angle < 0) Angle = 0;
+        razn = 0;
+        for (int i = servo.read(); i >= Angle; i--)
+        {
+          servo.write(i);
+          delay(ServoDelay);
+        }
+        timer = 0;
       }
-      if (servo.read() - Angle < 0) Angle = 0;
-      razn = 0;
-      for (int i = servo.read(); i >= Angle; i--)
-      {
-        servo.write(i);
-        delay(ServoDelay);
-      }
-      timer = 0;
+      //Жарко
 
+      //Холодно
       if (deltaTr < SetTemp) {
         razn = int(SetTemp) - int(deltaTr);
         if (razn > 3) razn = 4;
@@ -104,7 +112,9 @@ void loop() {
         }
         timer = 0;
       }
+      //Холодно
 
+      //Идеально
       if (deltaTr == SetTemp) {
         if (Angle != 60)
         {
@@ -114,15 +124,19 @@ void loop() {
             servo.write(i);
             delay(ServoDelay);
           }
+          complTimes++;
           timer = 0;
         }
       }
+      //Идеально
+
     }
   }
   else
   {
     int inByte = Serial.read();
     switch (inByte) {
+
       case '1': //close the wiiiindooooow!!!!
         {
           if (closed == false) {
@@ -132,6 +146,7 @@ void loop() {
               delay(ServoDelay);
             }
             closed = true;
+            opened = false;
           }
           else
           {
@@ -140,6 +155,30 @@ void loop() {
               servo.write(i);
               delay(ServoDelay);
             }
+            opened = false;
+            closed = false;
+          }
+        } break;
+
+      case '2': //OPEN THE WINDOW
+        {
+          if (opened == false) {
+            for (int i = servo.read(); i >= 0; i--)
+            {
+              servo.write(i);
+              delay(ServoDelay);
+            }
+            opened = true;
+            closed = false;
+          }
+          else
+          {
+            for (int i = servo.read(); i <= Angle; i++)
+            {
+              servo.write(i);
+              delay(ServoDelay);
+            }
+            opened = false;
             closed = false;
           }
         } break;
@@ -152,28 +191,47 @@ void loop() {
         {
           SetTemp--;
         }
+      case '/':
+        {
+          timerRead++;
+        } break;
+      case '*':
+        {
+          timerRead--;
+        }
 
     }
   }
-  Serial.print("Humidity: ");
-  Serial.print(int(deltaH));
-  Serial.print("; \t");
-  Serial.print("Temperature: ");
+
   Serial.print(deltaT);
+  Serial.print(";");
+  Serial.print(t22); 
   Serial.print(";");
   Serial.print(t);
   Serial.print(";");
-  Serial.print(t22);
-  Serial.print("; \t");
-  Serial.print("Angle: ");
-  Serial.print(int(servo.read()));
-  Serial.print(";\t Locked: ");
-  if (closed == true) Serial.print("true;"); else Serial.print("false;");
-  Serial.print(timer);
-  Serial.print(";\t SetTemp: ");
   Serial.print(SetTemp);
-  Serial.print(";\t ");
+  Serial.print(";");
+  Serial.print(deltaH);
+  Serial.print(";");
+  Serial.print(h22);
+  Serial.print(";");
+  Serial.print(h);
+  Serial.print(";");
+  Serial.print(int(servo.read()));
+  Serial.print(";");
+  if (closed == true)
+    Serial.print("true;"); else
+    Serial.print("false;");
+  if (opened == true)
+    Serial.print("true;"); else
+    Serial.print("false;");
+  Serial.print(int(timer));
+  Serial.print(";");
   Serial.print(timerRead);
+  Serial.print(";");
+  Serial.print(int(complTimes));
+  Serial.print(";");
+  Serial.print(int(allTimes));
   Serial.println(";");
   delay(1000);
 }

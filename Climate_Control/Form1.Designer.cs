@@ -43,14 +43,13 @@
             this.Closed = new System.Windows.Forms.Label();
             this.ClosedV = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.CycleAllV = new System.Windows.Forms.Label();
+            this.CyclesV = new System.Windows.Forms.Label();
             this.NeedTempV = new System.Windows.Forms.Label();
-            this.CycleAll = new System.Windows.Forms.Label();
+            this.Cycles = new System.Windows.Forms.Label();
             this.NeedTemp = new System.Windows.Forms.Label();
             this.CycleV = new System.Windows.Forms.Label();
-            this.HumidityV = new System.Windows.Forms.Label();
+            this.HumiditySrV = new System.Windows.Forms.Label();
             this.Cycle = new System.Windows.Forms.Label();
-            this.Humidity = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label23 = new System.Windows.Forms.Label();
@@ -62,6 +61,18 @@
             this.CloseWindow = new System.Windows.Forms.CheckBox();
             this.TempPlus = new System.Windows.Forms.Button();
             this.TempMinus = new System.Windows.Forms.Button();
+            this.Opened = new System.Windows.Forms.Label();
+            this.OpenedV = new System.Windows.Forms.Label();
+            this.CycleCompl = new System.Windows.Forms.Label();
+            this.CycleComplV = new System.Windows.Forms.Label();
+            this.CycleAll = new System.Windows.Forms.Label();
+            this.CycleAllV = new System.Windows.Forms.Label();
+            this.OpenWindow = new System.Windows.Forms.CheckBox();
+            this.HumidityHot = new System.Windows.Forms.Label();
+            this.HumiditySr = new System.Windows.Forms.Label();
+            this.HumidityWindow = new System.Windows.Forms.Label();
+            this.HumidityWindowV = new System.Windows.Forms.Label();
+            this.HumidityHotV = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -92,7 +103,7 @@
             // WindowTemp
             // 
             this.WindowTemp.AutoSize = true;
-            this.WindowTemp.Location = new System.Drawing.Point(41, 69);
+            this.WindowTemp.Location = new System.Drawing.Point(41, 68);
             this.WindowTemp.Name = "WindowTemp";
             this.WindowTemp.Size = new System.Drawing.Size(39, 13);
             this.WindowTemp.TabIndex = 2;
@@ -101,7 +112,7 @@
             // HotTemp
             // 
             this.HotTemp.AutoSize = true;
-            this.HotTemp.Location = new System.Drawing.Point(41, 88);
+            this.HotTemp.Location = new System.Drawing.Point(41, 89);
             this.HotTemp.Name = "HotTemp";
             this.HotTemp.Size = new System.Drawing.Size(75, 13);
             this.HotTemp.TabIndex = 3;
@@ -119,7 +130,7 @@
             // WindowTempV
             // 
             this.WindowTempV.AutoSize = true;
-            this.WindowTempV.Location = new System.Drawing.Point(124, 69);
+            this.WindowTempV.Location = new System.Drawing.Point(124, 68);
             this.WindowTempV.Name = "WindowTempV";
             this.WindowTempV.Size = new System.Drawing.Size(23, 13);
             this.WindowTempV.TabIndex = 5;
@@ -128,7 +139,7 @@
             // HotTempV
             // 
             this.HotTempV.AutoSize = true;
-            this.HotTempV.Location = new System.Drawing.Point(124, 88);
+            this.HotTempV.Location = new System.Drawing.Point(124, 89);
             this.HotTempV.Name = "HotTempV";
             this.HotTempV.Size = new System.Drawing.Size(23, 13);
             this.HotTempV.TabIndex = 6;
@@ -155,7 +166,7 @@
             // AngleV
             // 
             this.AngleV.AutoSize = true;
-            this.AngleV.Location = new System.Drawing.Point(312, 47);
+            this.AngleV.Location = new System.Drawing.Point(327, 47);
             this.AngleV.Name = "AngleV";
             this.AngleV.Size = new System.Drawing.Size(23, 13);
             this.AngleV.TabIndex = 9;
@@ -173,7 +184,7 @@
             // ClosedV
             // 
             this.ClosedV.AutoSize = true;
-            this.ClosedV.Location = new System.Drawing.Point(312, 69);
+            this.ClosedV.Location = new System.Drawing.Point(327, 67);
             this.ClosedV.Name = "ClosedV";
             this.ClosedV.Size = new System.Drawing.Size(23, 13);
             this.ClosedV.TabIndex = 11;
@@ -181,22 +192,32 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.HumidityHotV);
+            this.groupBox1.Controls.Add(this.HumidityWindowV);
             this.groupBox1.Controls.Add(this.CycleAllV);
-            this.groupBox1.Controls.Add(this.NeedTempV);
             this.groupBox1.Controls.Add(this.CycleAll);
+            this.groupBox1.Controls.Add(this.CycleComplV);
+            this.groupBox1.Controls.Add(this.CycleCompl);
+            this.groupBox1.Controls.Add(this.OpenedV);
+            this.groupBox1.Controls.Add(this.Opened);
+            this.groupBox1.Controls.Add(this.CyclesV);
+            this.groupBox1.Controls.Add(this.NeedTempV);
+            this.groupBox1.Controls.Add(this.Cycles);
             this.groupBox1.Controls.Add(this.NeedTemp);
             this.groupBox1.Controls.Add(this.CycleV);
-            this.groupBox1.Controls.Add(this.HumidityV);
+            this.groupBox1.Controls.Add(this.HumiditySrV);
             this.groupBox1.Controls.Add(this.Cycle);
-            this.groupBox1.Controls.Add(this.Humidity);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.ClosedV);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.AngleV);
             this.groupBox1.Controls.Add(this.HotTempV);
             this.groupBox1.Controls.Add(this.WindowTempV);
+            this.groupBox1.Controls.Add(this.HumidityWindow);
             this.groupBox1.Controls.Add(this.Closed);
+            this.groupBox1.Controls.Add(this.HumiditySr);
             this.groupBox1.Controls.Add(this.WindowTemp);
+            this.groupBox1.Controls.Add(this.HumidityHot);
             this.groupBox1.Controls.Add(this.SrTemp);
             this.groupBox1.Controls.Add(this.HotTemp);
             this.groupBox1.Controls.Add(this.label1);
@@ -209,37 +230,37 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Информация";
             // 
-            // CycleAllV
+            // CyclesV
             // 
-            this.CycleAllV.AutoSize = true;
-            this.CycleAllV.Location = new System.Drawing.Point(312, 113);
-            this.CycleAllV.Name = "CycleAllV";
-            this.CycleAllV.Size = new System.Drawing.Size(23, 13);
-            this.CycleAllV.TabIndex = 27;
-            this.CycleAllV.Text = "null";
+            this.CyclesV.AutoSize = true;
+            this.CyclesV.Location = new System.Drawing.Point(327, 127);
+            this.CyclesV.Name = "CyclesV";
+            this.CyclesV.Size = new System.Drawing.Size(23, 13);
+            this.CyclesV.TabIndex = 27;
+            this.CyclesV.Text = "null";
             // 
             // NeedTempV
             // 
             this.NeedTempV.AutoSize = true;
-            this.NeedTempV.Location = new System.Drawing.Point(124, 111);
+            this.NeedTempV.Location = new System.Drawing.Point(124, 110);
             this.NeedTempV.Name = "NeedTempV";
             this.NeedTempV.Size = new System.Drawing.Size(23, 13);
             this.NeedTempV.TabIndex = 26;
             this.NeedTempV.Text = "null";
             // 
-            // CycleAll
+            // Cycles
             // 
-            this.CycleAll.AutoSize = true;
-            this.CycleAll.Location = new System.Drawing.Point(217, 113);
-            this.CycleAll.Name = "CycleAll";
-            this.CycleAll.Size = new System.Drawing.Size(82, 13);
-            this.CycleAll.TabIndex = 21;
-            this.CycleAll.Text = "Всего циклов: ";
+            this.Cycles.AutoSize = true;
+            this.Cycles.Location = new System.Drawing.Point(217, 129);
+            this.Cycles.Name = "Cycles";
+            this.Cycles.Size = new System.Drawing.Size(93, 13);
+            this.Cycles.TabIndex = 21;
+            this.Cycles.Text = "Рабочих циклов: ";
             // 
             // NeedTemp
             // 
             this.NeedTemp.AutoSize = true;
-            this.NeedTemp.Location = new System.Drawing.Point(41, 111);
+            this.NeedTemp.Location = new System.Drawing.Point(41, 110);
             this.NeedTemp.Name = "NeedTemp";
             this.NeedTemp.Size = new System.Drawing.Size(62, 13);
             this.NeedTemp.TabIndex = 15;
@@ -248,38 +269,29 @@
             // CycleV
             // 
             this.CycleV.AutoSize = true;
-            this.CycleV.Location = new System.Drawing.Point(312, 88);
+            this.CycleV.Location = new System.Drawing.Point(327, 107);
             this.CycleV.Name = "CycleV";
             this.CycleV.Size = new System.Drawing.Size(23, 13);
             this.CycleV.TabIndex = 2;
             this.CycleV.Text = "null";
             // 
-            // HumidityV
+            // HumiditySrV
             // 
-            this.HumidityV.AutoSize = true;
-            this.HumidityV.Location = new System.Drawing.Point(124, 159);
-            this.HumidityV.Name = "HumidityV";
-            this.HumidityV.Size = new System.Drawing.Size(23, 13);
-            this.HumidityV.TabIndex = 14;
-            this.HumidityV.Text = "null";
+            this.HumiditySrV.AutoSize = true;
+            this.HumiditySrV.Location = new System.Drawing.Point(124, 159);
+            this.HumiditySrV.Name = "HumiditySrV";
+            this.HumiditySrV.Size = new System.Drawing.Size(23, 13);
+            this.HumiditySrV.TabIndex = 14;
+            this.HumiditySrV.Text = "null";
             // 
             // Cycle
             // 
             this.Cycle.AutoSize = true;
-            this.Cycle.Location = new System.Drawing.Point(217, 88);
+            this.Cycle.Location = new System.Drawing.Point(217, 109);
             this.Cycle.Name = "Cycle";
             this.Cycle.Size = new System.Drawing.Size(102, 13);
             this.Cycle.TabIndex = 1;
             this.Cycle.Text = "Циклов пройдено: ";
-            // 
-            // Humidity
-            // 
-            this.Humidity.AutoSize = true;
-            this.Humidity.Location = new System.Drawing.Point(41, 159);
-            this.Humidity.Name = "Humidity";
-            this.Humidity.Size = new System.Drawing.Size(66, 13);
-            this.Humidity.TabIndex = 13;
-            this.Humidity.Text = "Влажность:";
             // 
             // label13
             // 
@@ -292,6 +304,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.OpenWindow);
             this.groupBox2.Controls.Add(this.label23);
             this.groupBox2.Controls.Add(this.label22);
             this.groupBox2.Controls.Add(this.TurnOn);
@@ -397,6 +410,116 @@
             this.TempMinus.UseVisualStyleBackColor = true;
             this.TempMinus.Click += new System.EventHandler(this.button4_Click);
             // 
+            // Opened
+            // 
+            this.Opened.AutoSize = true;
+            this.Opened.Location = new System.Drawing.Point(217, 89);
+            this.Opened.Name = "Opened";
+            this.Opened.Size = new System.Drawing.Size(57, 13);
+            this.Opened.TabIndex = 28;
+            this.Opened.Text = "Открыто: ";
+            // 
+            // OpenedV
+            // 
+            this.OpenedV.AutoSize = true;
+            this.OpenedV.Location = new System.Drawing.Point(327, 87);
+            this.OpenedV.Name = "OpenedV";
+            this.OpenedV.Size = new System.Drawing.Size(23, 13);
+            this.OpenedV.TabIndex = 29;
+            this.OpenedV.Text = "null";
+            // 
+            // CycleCompl
+            // 
+            this.CycleCompl.AutoSize = true;
+            this.CycleCompl.Location = new System.Drawing.Point(217, 149);
+            this.CycleCompl.Name = "CycleCompl";
+            this.CycleCompl.Size = new System.Drawing.Size(66, 13);
+            this.CycleCompl.TabIndex = 30;
+            this.CycleCompl.Text = "Успешных: ";
+            // 
+            // CycleComplV
+            // 
+            this.CycleComplV.AutoSize = true;
+            this.CycleComplV.Location = new System.Drawing.Point(327, 147);
+            this.CycleComplV.Name = "CycleComplV";
+            this.CycleComplV.Size = new System.Drawing.Size(23, 13);
+            this.CycleComplV.TabIndex = 31;
+            this.CycleComplV.Text = "null";
+            // 
+            // CycleAll
+            // 
+            this.CycleAll.AutoSize = true;
+            this.CycleAll.Location = new System.Drawing.Point(217, 169);
+            this.CycleAll.Name = "CycleAll";
+            this.CycleAll.Size = new System.Drawing.Size(43, 13);
+            this.CycleAll.TabIndex = 32;
+            this.CycleAll.Text = "Всего: ";
+            // 
+            // CycleAllV
+            // 
+            this.CycleAllV.AutoSize = true;
+            this.CycleAllV.Location = new System.Drawing.Point(327, 167);
+            this.CycleAllV.Name = "CycleAllV";
+            this.CycleAllV.Size = new System.Drawing.Size(23, 13);
+            this.CycleAllV.TabIndex = 33;
+            this.CycleAllV.Text = "null";
+            // 
+            // OpenWindow
+            // 
+            this.OpenWindow.AutoSize = true;
+            this.OpenWindow.Location = new System.Drawing.Point(118, 22);
+            this.OpenWindow.Name = "OpenWindow";
+            this.OpenWindow.Size = new System.Drawing.Size(97, 17);
+            this.OpenWindow.TabIndex = 28;
+            this.OpenWindow.Text = "Открыть окно";
+            this.OpenWindow.UseVisualStyleBackColor = true;
+            this.OpenWindow.MouseClick += new System.Windows.Forms.MouseEventHandler(this.OpenWindow_MouseClick);
+            // 
+            // HumidityHot
+            // 
+            this.HumidityHot.AutoSize = true;
+            this.HumidityHot.Location = new System.Drawing.Point(41, 201);
+            this.HumidityHot.Name = "HumidityHot";
+            this.HumidityHot.Size = new System.Drawing.Size(75, 13);
+            this.HumidityHot.TabIndex = 3;
+            this.HumidityHot.Text = "Подоконник: ";
+            // 
+            // HumiditySr
+            // 
+            this.HumiditySr.AutoSize = true;
+            this.HumiditySr.Location = new System.Drawing.Point(41, 159);
+            this.HumiditySr.Name = "HumiditySr";
+            this.HumiditySr.Size = new System.Drawing.Size(56, 13);
+            this.HumiditySr.TabIndex = 1;
+            this.HumiditySr.Text = "Средняя: ";
+            // 
+            // HumidityWindow
+            // 
+            this.HumidityWindow.AutoSize = true;
+            this.HumidityWindow.Location = new System.Drawing.Point(41, 180);
+            this.HumidityWindow.Name = "HumidityWindow";
+            this.HumidityWindow.Size = new System.Drawing.Size(39, 13);
+            this.HumidityWindow.TabIndex = 2;
+            this.HumidityWindow.Text = "Окно: ";
+            // 
+            // HumidityWindowV
+            // 
+            this.HumidityWindowV.AutoSize = true;
+            this.HumidityWindowV.Location = new System.Drawing.Point(124, 180);
+            this.HumidityWindowV.Name = "HumidityWindowV";
+            this.HumidityWindowV.Size = new System.Drawing.Size(23, 13);
+            this.HumidityWindowV.TabIndex = 34;
+            this.HumidityWindowV.Text = "null";
+            // 
+            // HumidityHotV
+            // 
+            this.HumidityHotV.AutoSize = true;
+            this.HumidityHotV.Location = new System.Drawing.Point(124, 201);
+            this.HumidityHotV.Name = "HumidityHotV";
+            this.HumidityHotV.Size = new System.Drawing.Size(23, 13);
+            this.HumidityHotV.TabIndex = 35;
+            this.HumidityHotV.Text = "null";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -406,9 +529,8 @@
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Climate Control for Arduino";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -433,8 +555,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.CheckBox CloseWindow;
-        private System.Windows.Forms.Label HumidityV;
-        private System.Windows.Forms.Label Humidity;
+        private System.Windows.Forms.Label HumiditySrV;
         private System.Windows.Forms.Label label13;
         public System.Windows.Forms.Label WindowTempV;
         public System.Windows.Forms.Label SrTempV;
@@ -443,8 +564,8 @@
         private System.Windows.Forms.Button TurnOn;
         private System.Windows.Forms.Button TurnOff;
         private System.Windows.Forms.Label NeedTemp;
-        private System.Windows.Forms.Label CycleAll;
-        private System.Windows.Forms.Label CycleAllV;
+        private System.Windows.Forms.Label Cycles;
+        private System.Windows.Forms.Label CyclesV;
         private System.Windows.Forms.Label NeedTempV;
         private System.Windows.Forms.Button TempPlus;
         private System.Windows.Forms.Button TempMinus;
@@ -452,6 +573,18 @@
         private System.Windows.Forms.Button CyclePlus;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label CycleAllV;
+        private System.Windows.Forms.Label CycleAll;
+        private System.Windows.Forms.Label CycleComplV;
+        private System.Windows.Forms.Label CycleCompl;
+        private System.Windows.Forms.Label OpenedV;
+        private System.Windows.Forms.Label Opened;
+        private System.Windows.Forms.CheckBox OpenWindow;
+        private System.Windows.Forms.Label HumidityHotV;
+        private System.Windows.Forms.Label HumidityWindowV;
+        private System.Windows.Forms.Label HumidityWindow;
+        private System.Windows.Forms.Label HumiditySr;
+        private System.Windows.Forms.Label HumidityHot;
     }
 }
 
