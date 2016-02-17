@@ -59,7 +59,7 @@ namespace Climate_Control
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            try { if (serialPort1.IsOpen) serialPort1.Close(); } catch { }
+            try {serialPort1.Close(); } catch { }
         }
 
 
@@ -102,60 +102,36 @@ namespace Climate_Control
 
         private void button3_Click(object sender, EventArgs e)
         {
-            try
-            {
-                serialPort1.WriteLine("+");
-                serialPort1.WriteLine("");
-            }
+            try { serialPort1.WriteLine("+"); }
             catch { MessageBox.Show("Ошибка"); }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            try
-            {
-                serialPort1.WriteLine("-");
-                serialPort1.WriteLine("");
-            }
+            try { serialPort1.WriteLine("-"); }
             catch { MessageBox.Show("Ошибка"); }
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            try
-            {
-                serialPort1.WriteLine("/");
-                serialPort1.WriteLine("");
-            }
+            try { serialPort1.WriteLine("/"); }
             catch { MessageBox.Show("Ошибка"); }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            try
-            {
-                serialPort1.WriteLine("*");
-                serialPort1.WriteLine("");
-            }
+            try { serialPort1.WriteLine("*"); }
             catch { MessageBox.Show("Ошибка"); }
         }
         private void checkBox1_MouseClick(object sender, MouseEventArgs e)
         {
-            try
-            {
-                serialPort1.WriteLine("1");
-                serialPort1.WriteLine("");
-            }
+            try { serialPort1.WriteLine("1"); }
             catch { MessageBox.Show("Ошибка"); }
         }
 
         private void OpenWindow_MouseClick(object sender, MouseEventArgs e)
         {
-            try
-            {
-                serialPort1.WriteLine("2");
-                serialPort1.WriteLine("");
-            }
+            try { serialPort1.WriteLine("2"); }
             catch { MessageBox.Show("Ошибка"); }
         }
     }

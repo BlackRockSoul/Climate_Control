@@ -65,7 +65,7 @@ void loop() {
     return;
   }
 
-  if (Serial.available() < 4)  {
+  if (Serial.available() < 2)  {
 
     if ((timer >= timerRead) && (closed == false) && (opened == false)) {
 
