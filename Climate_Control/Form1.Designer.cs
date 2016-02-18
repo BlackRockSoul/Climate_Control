@@ -44,6 +44,14 @@
             this.Closed = new System.Windows.Forms.Label();
             this.ClosedV = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.HumidityHotV = new System.Windows.Forms.Label();
+            this.HumidityWindowV = new System.Windows.Forms.Label();
+            this.CycleAllV = new System.Windows.Forms.Label();
+            this.CycleAll = new System.Windows.Forms.Label();
+            this.CycleComplV = new System.Windows.Forms.Label();
+            this.CycleCompl = new System.Windows.Forms.Label();
+            this.OpenedV = new System.Windows.Forms.Label();
+            this.Opened = new System.Windows.Forms.Label();
             this.CyclesV = new System.Windows.Forms.Label();
             this.NeedTempV = new System.Windows.Forms.Label();
             this.Cycles = new System.Windows.Forms.Label();
@@ -52,7 +60,11 @@
             this.HumiditySrV = new System.Windows.Forms.Label();
             this.Cycle = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.HumidityWindow = new System.Windows.Forms.Label();
+            this.HumiditySr = new System.Windows.Forms.Label();
+            this.HumidityHot = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.OpenWindow = new System.Windows.Forms.CheckBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.TurnOn = new System.Windows.Forms.Button();
@@ -62,18 +74,7 @@
             this.CloseWindow = new System.Windows.Forms.CheckBox();
             this.TempPlus = new System.Windows.Forms.Button();
             this.TempMinus = new System.Windows.Forms.Button();
-            this.Opened = new System.Windows.Forms.Label();
-            this.OpenedV = new System.Windows.Forms.Label();
-            this.CycleCompl = new System.Windows.Forms.Label();
-            this.CycleComplV = new System.Windows.Forms.Label();
-            this.CycleAll = new System.Windows.Forms.Label();
-            this.CycleAllV = new System.Windows.Forms.Label();
-            this.OpenWindow = new System.Windows.Forms.CheckBox();
-            this.HumidityHot = new System.Windows.Forms.Label();
-            this.HumiditySr = new System.Windows.Forms.Label();
-            this.HumidityWindow = new System.Windows.Forms.Label();
-            this.HumidityWindowV = new System.Windows.Forms.Label();
-            this.HumidityHotV = new System.Windows.Forms.Label();
+            this.SkipCycle = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -231,6 +232,78 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Информация";
             // 
+            // HumidityHotV
+            // 
+            this.HumidityHotV.AutoSize = true;
+            this.HumidityHotV.Location = new System.Drawing.Point(124, 201);
+            this.HumidityHotV.Name = "HumidityHotV";
+            this.HumidityHotV.Size = new System.Drawing.Size(23, 13);
+            this.HumidityHotV.TabIndex = 35;
+            this.HumidityHotV.Text = "null";
+            // 
+            // HumidityWindowV
+            // 
+            this.HumidityWindowV.AutoSize = true;
+            this.HumidityWindowV.Location = new System.Drawing.Point(124, 180);
+            this.HumidityWindowV.Name = "HumidityWindowV";
+            this.HumidityWindowV.Size = new System.Drawing.Size(23, 13);
+            this.HumidityWindowV.TabIndex = 34;
+            this.HumidityWindowV.Text = "null";
+            // 
+            // CycleAllV
+            // 
+            this.CycleAllV.AutoSize = true;
+            this.CycleAllV.Location = new System.Drawing.Point(327, 167);
+            this.CycleAllV.Name = "CycleAllV";
+            this.CycleAllV.Size = new System.Drawing.Size(23, 13);
+            this.CycleAllV.TabIndex = 33;
+            this.CycleAllV.Text = "null";
+            // 
+            // CycleAll
+            // 
+            this.CycleAll.AutoSize = true;
+            this.CycleAll.Location = new System.Drawing.Point(217, 169);
+            this.CycleAll.Name = "CycleAll";
+            this.CycleAll.Size = new System.Drawing.Size(43, 13);
+            this.CycleAll.TabIndex = 32;
+            this.CycleAll.Text = "Всего: ";
+            // 
+            // CycleComplV
+            // 
+            this.CycleComplV.AutoSize = true;
+            this.CycleComplV.Location = new System.Drawing.Point(327, 147);
+            this.CycleComplV.Name = "CycleComplV";
+            this.CycleComplV.Size = new System.Drawing.Size(23, 13);
+            this.CycleComplV.TabIndex = 31;
+            this.CycleComplV.Text = "null";
+            // 
+            // CycleCompl
+            // 
+            this.CycleCompl.AutoSize = true;
+            this.CycleCompl.Location = new System.Drawing.Point(217, 149);
+            this.CycleCompl.Name = "CycleCompl";
+            this.CycleCompl.Size = new System.Drawing.Size(66, 13);
+            this.CycleCompl.TabIndex = 30;
+            this.CycleCompl.Text = "Успешных: ";
+            // 
+            // OpenedV
+            // 
+            this.OpenedV.AutoSize = true;
+            this.OpenedV.Location = new System.Drawing.Point(327, 87);
+            this.OpenedV.Name = "OpenedV";
+            this.OpenedV.Size = new System.Drawing.Size(23, 13);
+            this.OpenedV.TabIndex = 29;
+            this.OpenedV.Text = "null";
+            // 
+            // Opened
+            // 
+            this.Opened.AutoSize = true;
+            this.Opened.Location = new System.Drawing.Point(217, 89);
+            this.Opened.Name = "Opened";
+            this.Opened.Size = new System.Drawing.Size(57, 13);
+            this.Opened.TabIndex = 28;
+            this.Opened.Text = "Открыто: ";
+            // 
             // CyclesV
             // 
             this.CyclesV.AutoSize = true;
@@ -303,8 +376,36 @@
             this.label13.TabIndex = 12;
             this.label13.Text = "Влажность: ";
             // 
+            // HumidityWindow
+            // 
+            this.HumidityWindow.AutoSize = true;
+            this.HumidityWindow.Location = new System.Drawing.Point(41, 180);
+            this.HumidityWindow.Name = "HumidityWindow";
+            this.HumidityWindow.Size = new System.Drawing.Size(39, 13);
+            this.HumidityWindow.TabIndex = 2;
+            this.HumidityWindow.Text = "Окно: ";
+            // 
+            // HumiditySr
+            // 
+            this.HumiditySr.AutoSize = true;
+            this.HumiditySr.Location = new System.Drawing.Point(41, 159);
+            this.HumiditySr.Name = "HumiditySr";
+            this.HumiditySr.Size = new System.Drawing.Size(56, 13);
+            this.HumiditySr.TabIndex = 1;
+            this.HumiditySr.Text = "Средняя: ";
+            // 
+            // HumidityHot
+            // 
+            this.HumidityHot.AutoSize = true;
+            this.HumidityHot.Location = new System.Drawing.Point(41, 201);
+            this.HumidityHot.Name = "HumidityHot";
+            this.HumidityHot.Size = new System.Drawing.Size(75, 13);
+            this.HumidityHot.TabIndex = 3;
+            this.HumidityHot.Text = "Подоконник: ";
+            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.SkipCycle);
             this.groupBox2.Controls.Add(this.OpenWindow);
             this.groupBox2.Controls.Add(this.label23);
             this.groupBox2.Controls.Add(this.label22);
@@ -321,6 +422,17 @@
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Управление";
+            // 
+            // OpenWindow
+            // 
+            this.OpenWindow.AutoSize = true;
+            this.OpenWindow.Location = new System.Drawing.Point(118, 22);
+            this.OpenWindow.Name = "OpenWindow";
+            this.OpenWindow.Size = new System.Drawing.Size(97, 17);
+            this.OpenWindow.TabIndex = 28;
+            this.OpenWindow.Text = "Открыть окно";
+            this.OpenWindow.UseVisualStyleBackColor = true;
+            this.OpenWindow.MouseClick += new System.Windows.Forms.MouseEventHandler(this.OpenWindow_MouseClick);
             // 
             // label23
             // 
@@ -411,115 +523,15 @@
             this.TempMinus.UseVisualStyleBackColor = true;
             this.TempMinus.Click += new System.EventHandler(this.button4_Click);
             // 
-            // Opened
+            // SkipCycle
             // 
-            this.Opened.AutoSize = true;
-            this.Opened.Location = new System.Drawing.Point(217, 89);
-            this.Opened.Name = "Opened";
-            this.Opened.Size = new System.Drawing.Size(57, 13);
-            this.Opened.TabIndex = 28;
-            this.Opened.Text = "Открыто: ";
-            // 
-            // OpenedV
-            // 
-            this.OpenedV.AutoSize = true;
-            this.OpenedV.Location = new System.Drawing.Point(327, 87);
-            this.OpenedV.Name = "OpenedV";
-            this.OpenedV.Size = new System.Drawing.Size(23, 13);
-            this.OpenedV.TabIndex = 29;
-            this.OpenedV.Text = "null";
-            // 
-            // CycleCompl
-            // 
-            this.CycleCompl.AutoSize = true;
-            this.CycleCompl.Location = new System.Drawing.Point(217, 149);
-            this.CycleCompl.Name = "CycleCompl";
-            this.CycleCompl.Size = new System.Drawing.Size(66, 13);
-            this.CycleCompl.TabIndex = 30;
-            this.CycleCompl.Text = "Успешных: ";
-            // 
-            // CycleComplV
-            // 
-            this.CycleComplV.AutoSize = true;
-            this.CycleComplV.Location = new System.Drawing.Point(327, 147);
-            this.CycleComplV.Name = "CycleComplV";
-            this.CycleComplV.Size = new System.Drawing.Size(23, 13);
-            this.CycleComplV.TabIndex = 31;
-            this.CycleComplV.Text = "null";
-            // 
-            // CycleAll
-            // 
-            this.CycleAll.AutoSize = true;
-            this.CycleAll.Location = new System.Drawing.Point(217, 169);
-            this.CycleAll.Name = "CycleAll";
-            this.CycleAll.Size = new System.Drawing.Size(43, 13);
-            this.CycleAll.TabIndex = 32;
-            this.CycleAll.Text = "Всего: ";
-            // 
-            // CycleAllV
-            // 
-            this.CycleAllV.AutoSize = true;
-            this.CycleAllV.Location = new System.Drawing.Point(327, 167);
-            this.CycleAllV.Name = "CycleAllV";
-            this.CycleAllV.Size = new System.Drawing.Size(23, 13);
-            this.CycleAllV.TabIndex = 33;
-            this.CycleAllV.Text = "null";
-            // 
-            // OpenWindow
-            // 
-            this.OpenWindow.AutoSize = true;
-            this.OpenWindow.Location = new System.Drawing.Point(118, 22);
-            this.OpenWindow.Name = "OpenWindow";
-            this.OpenWindow.Size = new System.Drawing.Size(97, 17);
-            this.OpenWindow.TabIndex = 28;
-            this.OpenWindow.Text = "Открыть окно";
-            this.OpenWindow.UseVisualStyleBackColor = true;
-            this.OpenWindow.MouseClick += new System.Windows.Forms.MouseEventHandler(this.OpenWindow_MouseClick);
-            // 
-            // HumidityHot
-            // 
-            this.HumidityHot.AutoSize = true;
-            this.HumidityHot.Location = new System.Drawing.Point(41, 201);
-            this.HumidityHot.Name = "HumidityHot";
-            this.HumidityHot.Size = new System.Drawing.Size(75, 13);
-            this.HumidityHot.TabIndex = 3;
-            this.HumidityHot.Text = "Подоконник: ";
-            // 
-            // HumiditySr
-            // 
-            this.HumiditySr.AutoSize = true;
-            this.HumiditySr.Location = new System.Drawing.Point(41, 159);
-            this.HumiditySr.Name = "HumiditySr";
-            this.HumiditySr.Size = new System.Drawing.Size(56, 13);
-            this.HumiditySr.TabIndex = 1;
-            this.HumiditySr.Text = "Средняя: ";
-            // 
-            // HumidityWindow
-            // 
-            this.HumidityWindow.AutoSize = true;
-            this.HumidityWindow.Location = new System.Drawing.Point(41, 180);
-            this.HumidityWindow.Name = "HumidityWindow";
-            this.HumidityWindow.Size = new System.Drawing.Size(39, 13);
-            this.HumidityWindow.TabIndex = 2;
-            this.HumidityWindow.Text = "Окно: ";
-            // 
-            // HumidityWindowV
-            // 
-            this.HumidityWindowV.AutoSize = true;
-            this.HumidityWindowV.Location = new System.Drawing.Point(124, 180);
-            this.HumidityWindowV.Name = "HumidityWindowV";
-            this.HumidityWindowV.Size = new System.Drawing.Size(23, 13);
-            this.HumidityWindowV.TabIndex = 34;
-            this.HumidityWindowV.Text = "null";
-            // 
-            // HumidityHotV
-            // 
-            this.HumidityHotV.AutoSize = true;
-            this.HumidityHotV.Location = new System.Drawing.Point(124, 201);
-            this.HumidityHotV.Name = "HumidityHotV";
-            this.HumidityHotV.Size = new System.Drawing.Size(23, 13);
-            this.HumidityHotV.TabIndex = 35;
-            this.HumidityHotV.Text = "null";
+            this.SkipCycle.Location = new System.Drawing.Point(9, 99);
+            this.SkipCycle.Name = "SkipCycle";
+            this.SkipCycle.Size = new System.Drawing.Size(121, 23);
+            this.SkipCycle.TabIndex = 29;
+            this.SkipCycle.Text = "Пропустить цикл";
+            this.SkipCycle.UseVisualStyleBackColor = true;
+            this.SkipCycle.Click += new System.EventHandler(this.SkipCycle_Click);
             // 
             // Form1
             // 
@@ -588,6 +600,7 @@
         private System.Windows.Forms.Label HumidityWindow;
         private System.Windows.Forms.Label HumiditySr;
         private System.Windows.Forms.Label HumidityHot;
+        private System.Windows.Forms.Button SkipCycle;
     }
 }
 

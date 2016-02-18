@@ -116,17 +116,8 @@ void loop() {
 
       //Идеально
       if (deltaTr == SetTemp) {
-        if (Angle != 60)
-        {
-          Angle = 60;
-          for (int i = servo.read(); i <= Angle; i++)
-          {
-            servo.write(i);
-            delay(ServoDelay);
-          }
-          complTimes++;
-          timer = 0;
-        }
+        complTimes++;
+        timer = 0;
       }
       //Идеально
 
@@ -183,6 +174,11 @@ void loop() {
           }
         } break;
 
+      case ']':
+        {
+          timer = timerRead -1;
+        } break;
+
       case '+':
         {
           SetTemp++;
@@ -205,7 +201,7 @@ void loop() {
 
   Serial.print(deltaT);
   Serial.print(";");
-  Serial.print(t22); 
+  Serial.print(t22);
   Serial.print(";");
   Serial.print(t);
   Serial.print(";");

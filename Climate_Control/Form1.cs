@@ -134,5 +134,11 @@ namespace Climate_Control
             try { serialPort1.WriteLine("2"); }
             catch { MessageBox.Show("Ошибка"); }
         }
+
+        private void SkipCycle_Click(object sender, EventArgs e)
+        {
+            try { serialPort1.WriteLine("]"); }
+            catch { MessageBox.Show("Ошибка"); }
+        }
     }
 }
